@@ -27,7 +27,7 @@ class ProcessingThread(Thread):
                     log.error(processing_error)
                     continue
 
-                log.debug("Processed data : %s", processed_data)
+                #log.debug("Processed data : %s", processed_data)
 
                 # send data to the next module
                 if processed_data:
@@ -37,7 +37,7 @@ class ProcessingThread(Thread):
                         log.error(send_error)
                         continue
 
-                    log.debug("Data sent.")
+                    log.info("Data sent.")
 
             self.msg_received.clear()
 

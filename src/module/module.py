@@ -24,14 +24,12 @@ def module_main(received_data: any) -> [any, str]:
 
     """
 
-    log.debug("Processing ...")
+    #log.debug("Processing ...")
 
     try:
-        # YOUR CODE HERE
+        log.info(f"Received Data: {received_data}")
 
-        processed_data = received_data
-
-        return processed_data, None
+        return received_data, None
 
     except Exception as e:
         return None, f"Exception in the module business logic: {e}"

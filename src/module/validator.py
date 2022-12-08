@@ -22,7 +22,7 @@ def data_validation(data: any) -> str:
 
     """
 
-    log.debug("Validating ...")
+    #log.debug("Validating ...")
 
     try:
         # YOUR CODE HERE

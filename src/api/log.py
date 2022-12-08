@@ -19,11 +19,11 @@ def setup_logging():
     Configure logger.
     """
 
-    log_level = (
-        log_levels[getenv("LOG_LEVEL")] if getenv("LOG_LEVEL") in log_levels else INFO
-    )
+    # log_level = (
+    #     log_levels[getenv("LOG_LEVEL")] if getenv("LOG_LEVEL") in log_levels else INFO
+    # )
 
     basicConfig(
-        level=log_level,
-        format="{'level': '%(levelname)s', 'time': '%(asctime)s', 'filename': '%(name)s', 'message': '%(message)s'}",
+        level=INFO,
+        format="{'level': '%(levelname)s', 'time': '%(asctime)s', 'message': '%(message)s'}",
     )

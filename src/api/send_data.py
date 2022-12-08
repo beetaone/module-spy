@@ -34,9 +34,7 @@ def send_data(processed_data: any) -> str:
             # send data to the next module
             response = post(url=url, json=processed_data)
 
-            log.debug(
-                f"Sent data to url {url} | Response: {response.status_code} {response.reason}"
-            )
+            #log.debug(f"Sent data to url {url} | Response: {response.status_code} {response.reason}")
 
             if response.status_code != 200:
                 failed_responses.append(
