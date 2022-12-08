@@ -33,7 +33,7 @@ def request_handler():
         # receive data from the previous module
         received_data = request.json
 
-        log.debug("Received data: %s", received_data)
+        #log.debug("Received data: %s", received_data)
 
         # validate incoming data
         validation_error = data_validation(received_data)
@@ -43,13 +43,13 @@ def request_handler():
             response.status = 400
             return validation_error
 
-        log.debug("Validation successful.")
+        #log.debug("Validation successful.")
 
         # data accepted, so add data to the queue
         data_Q.put(received_data)
 
         try:
-            log.debug("Invoking the thread to process new data")
+            #log.debug("Invoking the thread to process new data")
             data_processing_thread.resume()
 
         except Exception as e:
