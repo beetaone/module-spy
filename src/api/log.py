@@ -3,14 +3,26 @@ Set up a customized logging.
 """
 
 from os import getenv
-from logging import basicConfig, DEBUG, INFO, WARNING, ERROR, CRITICAL
+import logging
+import json
+
+# Create a JSON formatter
+class JSONFormatter(logging.Formatter):
+    def format(self, record):
+        log_data = {
+            'timestamp': self.formatTime(record),
+            'level': record.levelname,
+            'filename': record.filename,
+            'message': record.getMessage(),
+        }
+        return json.dumps(log_data)
 
 log_levels = {
-    "DEBUG": DEBUG,
-    "INFO": INFO,
-    "WARNING": WARNING,
-    "ERROR": ERROR,
-    "CRITICAL": CRITICAL,
+    "DEBUG": logging.DEBUG,
+    "INFO": logging.INFO,
+    "WARNING": logging.WARNING,
+    "ERROR": logging.ERROR,
+    "CRITICAL": logging.CRITICAL,
 }
 
 
@@ -23,7 +35,10 @@ def setup_logging():
     #     log_levels[getenv("LOG_LEVEL")] if getenv("LOG_LEVEL") in log_levels else INFO
     # )
 
-    basicConfig(
-        level=INFO,
-        format="{'level': '%(levelname)s', 'time': '%(asctime)s', 'message': '%(message)s'}",
+    logHandler = logging.StreamHandler()
+    logHandler.setFormatter(JSONFormatter())
+
+    logging.basicConfig(
+        level=logging.INFO,
+        handlers=[logHandler],
     )
