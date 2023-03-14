@@ -3,7 +3,7 @@
 |                |                                       |
 | -------------- | ------------------------------------- |
 | Name           | Spy                           |
-| Version        | v1.0.0                                |
+| Version        | v1.0.1                                |
 | DockerHub | [weevenetwork/spy](https://hub.docker.com/r/weevenetwork/spy) |
 | Authors        | Jakub Grzelak                    |
 
