@@ -4,14 +4,14 @@
 | -------------- | ------------------------------------- |
 | Name           | Spy                           |
 | Version        | v1.0.1                                |
-| DockerHub | [weevenetwork/spy](https://hub.docker.com/r/weevenetwork/spy) |
+| DockerHub | [beetaone/spy](https://hub.docker.com/r/beetaone/spy) |
 | Authors        | Jakub Grzelak                    |
 
 - [Spy](#spy)
   - [Description](#description)
   - [Environment Variables](#environment-variables)
     - [Module Specific](#module-specific)
-    - [Set by the weeve Agent on the edge-node](#set-by-the-weeve-agent-on-the-edge-node)
+    - [Set by the beetaone Agent on the edge-node](#set-by-the-beetaone-agent-on-the-edge-node)
   - [Dependencies](#dependencies)
   - [Input](#input)
   - [Output](#output)
@@ -30,9 +30,9 @@ Debugging module displaying all data passing through it in the logs. This module
 This module does not have any module specific configuration.
 
 
-### Set by the weeve Agent on the edge-node
+### Set by the beetaone Agent on the edge-node
 
-Other features required for establishing the inter-container communication between modules in a data service are set by weeve agent.
+Other features required for establishing the inter-container communication between modules in a data service are set by beetaone agent.
 
 | Environment Variables | type   | Description                                    |
 | --------------------- | ------ | ---------------------------------------------- |
